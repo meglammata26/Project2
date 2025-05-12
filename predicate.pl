@@ -31,6 +31,25 @@ follow_path(Maze, [Action|Rest], Curr, End) :-
     valid_coord(Maze, Next),
     follow_path(Maze, Rest, Next, End).
 
-% Temporary declaration for testing purposes
-find_exit(_, []) :-
-    write('Hello, maze!'), nl.
+% The main entry point 
+find_exit(Maze, Actions) :-
+    find_start(Maze, Start),
+    ( var(Actions) -> 
+        dfs(Maze, Start, [], Actions)
+    ;   follow_path(Maze, Actions, Start, End), 
+        cell(Maze, End, e)    
+    
+    ).
+
+% DFS 
+% Base case: when we reach exit 
+dfs(Maze, Coord, _, []) :-
+    cell(Maze, Coord, e).
+
+% Recursive case : looking for any other possible moves
+dfs(Maze, Coord, Visited, [Move|Rest]) :-
+    move_coord(Coord, Move, Next),
+    valid_coord(Maze, Next),
+    \+ member(Next, Visited),
+    dfs(Maze, Next, [Coord | Visited], Rest).
+

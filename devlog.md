@@ -20,3 +20,8 @@ Thoughts:
 Had to correct some syntax issues in my code. Code is running properly for validating coordinations and simulation of actions.
 Goals/Plan:
 Next I need to finish the predicate logic and start the implementation of DFS for when the value is unbound
+
+05/12 4:57 pm
+
+Thoughts:
+Finished implementing of main entry of predicate and the DFS. Passed my main test case and no errors!
