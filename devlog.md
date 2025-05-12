@@ -5,3 +5,11 @@ I read the project description. I need to create a predicate that goes from a st
 
 Overall Plan:
 Create my repo. Add this devlog. Add relevant code files. For my first step, I will create a predicate that will recognize each of the cell values and directions.
+
+05/12 3:59 pm
+
+Thoughts:
+Added the recognition of the cell values and directions.
+
+Goals/Plan:
+Need to implement a way to validate coordinates. Simulate list of actions. Begin implementation of DFS for when the value is unbound
