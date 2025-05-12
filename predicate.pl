@@ -2,8 +2,8 @@
 
 % Recognize cell values
 cell(Maze, coord(R,C), Value) :-
-    nth0(R, Maze, Row)
-    nth0(C, Row, Value)
+    nth0(R, Maze, Row), 
+    nth0(C, Row, Value). 
 
 % Moving from one coordinate to another 
 move_coord(coord(R,C), up, coord(R2, C)) :- R2 is R - 1. 
@@ -31,4 +31,6 @@ follow_path(Maze, [Action|Rest], Curr, End) :-
     valid_coord(Maze, Next),
     follow_path(Maze, Rest, Next, End).
 
-
+% Temporary declaration for testing purposes
+find_exit(_, []) :-
+    write('Hello, maze!'), nl.
